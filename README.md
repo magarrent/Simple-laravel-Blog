@@ -45,3 +45,5 @@ After this, we will need to configure database, edit `app/config/database.php` a
 
 And if you need to send emails configure `app/config/mail.php` with your mail credentials.
 If you need to send emails with the contact form, in the `BlogController` change the email.
+
+Demo in progress
