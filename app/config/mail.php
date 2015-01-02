@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'marc@magarrent.com', 'name' => 'Marc Garcia'),
+	'from' => array('address' => 'FROM_ADDRESS', 'name' => 'FROM_NAME'),
 
 	/*
 	|--------------------------------------------------------------------------
