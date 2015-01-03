@@ -1,4 +1,6 @@
 #### Live Demo => http://laravel.magarrent.com/
+##### User => demo
+##### Password => demo
 
 > * Author: Marc Garcia Torrent
 > * Technology: Laravel 4.2
