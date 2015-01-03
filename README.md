@@ -1,4 +1,9 @@
-#### Live Demo => http://laravel.magarrent.com/
+#### Live Demo 
+Blog
+http://laravel.magarrent.com/
+
+Admin
+http://laravel.magarrent.com/supersecret
 ##### User => demo
 ##### Password => demo
 
