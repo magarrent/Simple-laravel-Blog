@@ -23,16 +23,19 @@ Route::get('/supersecret', array('uses' => 'AdminController@showLogin'));
 Route::post('/supersecret', array('uses' => 'AdminController@postLogin'));
 Route::get('/supersecret/logout', array('uses' => 'AdminController@logout'));
 
-// Admin posts and categories
-Route::get('supersecret/add', array('uses' => 'AdminController@addPost'));
-Route::post('supersecret/add', array('uses' => 'AdminController@addPost_POST'));
-Route::get('supersecret/delete/{id}', array('uses' => 'AdminController@deletePost'));
-Route::get('supersecret/edit/{id}', array('uses' => 'AdminController@editPost'));
-Route::post('supersecret/edit/{id}', array('uses' => 'AdminController@editPost_POST'));
-Route::post('supersecret/category', array('uses' => 'AdminController@addCategory'));
+// Check authentication
+Route::group(["before" => "auth"], function() {
+	// Admin posts and categories
+	Route::get('supersecret/add', array('uses' => 'AdminController@addPost'));
+	Route::post('supersecret/add', array('uses' => 'AdminController@addPost_POST'));
+	Route::get('supersecret/delete/{id}', array('uses' => 'AdminController@deletePost'));
+	Route::get('supersecret/edit/{id}', array('uses' => 'AdminController@editPost'));
+	Route::post('supersecret/edit/{id}', array('uses' => 'AdminController@editPost_POST'));
+	Route::post('supersecret/category', array('uses' => 'AdminController@addCategory'));
 
-// Admin users
-Route::get('supersecret/users', array('uses' => 'AdminController@viewUsers'));
-Route::get('supersecret/users/delete/{id}', array('uses' => 'AdminController@deleteUser'));
-Route::get('supersecret/users/add', array('uses' => 'AdminController@addUser'));
-Route::post('supersecret/users/add', array('uses' => 'AdminController@addUser_POST'));
+	// Admin users
+	Route::get('supersecret/users', array('uses' => 'AdminController@viewUsers'));
+	Route::get('supersecret/users/delete/{id}', array('uses' => 'AdminController@deleteUser'));
+	Route::get('supersecret/users/add', array('uses' => 'AdminController@addUser'));
+	Route::post('supersecret/users/add', array('uses' => 'AdminController@addUser_POST'));
+});
